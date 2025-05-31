@@ -1,88 +1,80 @@
-import { useRef, useEffect, useState } from "react";
-import {
-  Box,
-  Flex,
-  Text,
-  VStack,
-  HStack,
-  Stack,
-  Link as ChakraLink,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { Button } from "./components/ui/button";
+import { ArrowDown } from "lucide-react";
 import chmunLogo from "/chmunlogo.png";
 import Navbar from "./components/Navbar";
-
-const MotionText = motion(Text);
-
-const bounceVariants = {
-  hidden: { y: 0 },
-  visible: (i) => ({
-    y: [0, -20, 0],
-    transition: {
-      delay: i * 0.1,
-      duration: 0.6,
-      repeat: 0,
-    },
-  }),
-};
-
-export default function App() {
+function App() {
   const aboutRef = useRef(null);
-  const [startAnimation, setStartAnimation] = useState(false);
-
-  useEffect(() => {
-    setStartAnimation(true);
-  }, []);
 
   const scrollToAbout = () => {
     aboutRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const chmunText = "CHMUN'25".split("");
+  useEffect(() => {
+    const letters = document.querySelectorAll(".bounce-letter");
+    letters.forEach((letter, index) => {
+      letter.style.animationDelay = `${index * 0.1}s`;
+      // Remove animation class after animation completes
+      setTimeout(
+        () => {
+          letter.classList.remove("animate-bounce-once");
+        },
+        index * 100 + 800,
+      ); // Match animation duration (800ms) + delay
+    });
+  }, []);
 
   return (
-    <Box bg="black" color="white" minH="100vh" fontFamily="sans-serif">
+    <div className="min-h-screen bg-black text-white font-sans">
+      {/* Navbar */}
       <Navbar />
-      {/* Hero Section */}
-      <VStack spacing={6} py={16} textAlign="center">
-        <img src={chmunLogo} alt="CHMUN Logo" style={{ width: "200px" }} />
 
-        <HStack>
-          {chmunText.map((char, index) => (
-            <MotionText
+      {/* Hero Section */}
+      <section className="min-h-screen flex flex-col items-center justify-center pt-16">
+        {/* Logo */}
+        <img src={chmunLogo} alt="CHMUN Logo" className="w-48 h-48 mb-8" />
+
+        {/* Bouncing Text */}
+        <div className="text-7xl md:text-9xl font-extrabold tracking-tight">
+          {"CHMUN'25".split("").map((char, index) => (
+            <span
               key={index}
-              custom={index}
-              initial="hidden"
-              animate={startAnimation ? "visible" : "hidden"}
-              variants={bounceVariants}
-              fontSize="9xl"
-              fontWeight="bold"
+              className="bounce-letter inline-block animate-bounce-once"
+              style={{ animationDuration: "0.8s" }}
             >
               {char}
-            </MotionText>
+            </span>
           ))}
-        </HStack>
-
-        <Text fontSize="lg">August 23, 24</Text>
-
-        <div
-          onClick={scrollToAbout}
-          className="cursor-pointer text-white text-8xl hover:scale-125 transition-transform"
-        >
-          ↓
         </div>
-      </VStack>
+
+        {/* Date */}
+        <p className="mt-8 text-xl md:text-2xl text-gray-300">
+          Mark your calendars - 23 and 24 August
+        </p>
+
+        {/* Arrow Button */}
+        <Button
+          variant="ghost"
+          className="mt-12 text-white hover:bg-white/10"
+          onClick={scrollToAbout}
+        >
+          <ArrowDown className="w-8 h-8" />
+        </Button>
+      </section>
 
       {/* About Section */}
-      <Box ref={aboutRef} id="about" py={16} px={8}>
-        <Text fontSize="3xl" fontWeight="bold" mb={4}>
-          About
-        </Text>
-        <Text fontSize="md" maxW="600px">
-          CHMUN is dedicated to fostering a new generation of Indian leaders
-          through diplomacy and global dialogue.
-        </Text>
-      </Box>
-    </Box>
+      <section id="about" ref={aboutRef} className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold mb-8">About CHMUN</h2>
+          <p className="text-lg text-gray-300">
+            CHMUN'25 is a prestigious Model United Nations conference bringing
+            together passionate delegates to discuss and debate global issues.
+            Join us for an unforgettable experience on 23rd and 24th August.
+          </p>
+        </div>
+      </section>
+    </div>
   );
 }
+
+export default App;

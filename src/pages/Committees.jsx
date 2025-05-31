@@ -1,74 +1,80 @@
-// src/pages/Committees.jsx
-import { Box, Text, VStack, Button } from "@chakra-ui/react";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
+import { Button } from "../components/ui/button";
 
-const committees = [
-  {
-    abbrev: "UNSC",
-    fullName: "United Nations Security Council",
-    agenda: "Global disarmament and nuclear non-proliferation",
-    image: "/unsc.avif",
-  },
-  {
-    abbrev: "UNHRC",
-    fullName: "United Nations Human Rights Council",
-    agenda: "Addressing refugee crises in conflict zones",
-    image: "/unhrc.jpeg",
-  },
-  {
-    abbrev: "AIPPM",
-    fullName: "All India Political Parties Meet",
-    agenda: "Discussing electoral reforms in India",
-    image: "/aippm.avif",
-  },
-  // Add more committees as needed
-];
+function Committees() {
+  const committees = [
+    {
+      abbr: "AIPPM",
+      fullForm: "All India Political Parties Meet",
+      agenda:
+        "Deliberation on UCC with special emphasis on the recent WAQF bill",
+      bgImage: "/aippm.avif",
+    },
+    {
+      abbr: "UNSC",
+      fullForm: "United Nations Security Council",
+      agenda: "Addressing Global Security Threats",
+      bgImage: "/unsc.avif",
+    },
+    {
+      abbr: "DISEC",
+      fullForm: "Disarmament and International Security Committee",
+      agenda: "Nuclear Disarmament Strategies",
+      bgImage: "disec.jpg",
+    },
+    {
+      abbr: "UNODC",
+      fullForm: "United Nations Office on Drugs and Crime",
+      agenda: "Combating Transnational Organized Crime",
+      bgImage: "unodc.jpeg",
+    },
+    {
+      abbr: "CCC",
+      fullForm: "Crisis Committee Council",
+      agenda: "Managing Global Crises",
+      bgImage: "ccc.jpeg",
+    },
+    {
+      abbr: "UNHRC",
+      fullForm: "United Nations Human Rights Council",
+      agenda: "Promoting Global Human Rights",
+      bgImage: "unhrc.jpeg",
+    },
+  ];
 
-export default function Committees() {
   return (
-    <Box bg="black" color="white">
+    <div className="bg-black text-white pt-20">
       <Navbar />
-      <Box pt="80px">
-        {" "}
-        {/* space for fixed navbar */}
-        {committees.map((committee, idx) => (
-          <Box
-            key={idx}
-            bgImage={`url(${committee.image})`}
-            bgSize="cover"
-            bgPos="center"
-            w="100%"
-            minH="100vh"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            px={8}
-          >
-            <VStack
-              spacing={4}
-              bg="rgba(0,0,0,0.6)"
-              p={8}
-              borderRadius="md"
-              textAlign="center"
-              maxW="2xl"
-              backdropFilter="blur(4px)"
-            >
-              <Text fontSize="5xl" fontWeight="bold">
-                {committee.abbrev}
-              </Text>
-              <Text fontSize="xl" fontWeight="semibold">
-                {committee.fullName}
-              </Text>
-              <Text fontSize="md" fontStyle="italic">
-                Agenda: {committee.agenda}
-              </Text>
-              <Button colorScheme="teal" variant="solid" mt={4}>
-                Learn More
-              </Button>
-            </VStack>
-          </Box>
-        ))}
-      </Box>
-    </Box>
+      {committees.map((committee, index) => (
+        <section
+          key={committee.abbr}
+          className="relative w-full h-[600px] flex items-center bg-cover bg-center"
+          style={{ backgroundImage: `url(${committee.bgImage})` }}
+        >
+          {/* Diagonal Slash with Transparency */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent clip-path-diagonal"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl w-full pl-8 sm:pl-12 lg:pl-16 text-left">
+            <h2 className="text-7xl md:text-9xl font-black tracking-tight">
+              {committee.abbr}
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 mt-2">
+              {committee.fullForm}
+            </p>
+            <p className="text-2xl md:text-2xl text-gray-200 mt-12">
+              Agenda: {committee.agenda}
+            </p>
+            <Button className="mt-10 bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+              Learn More
+            </Button>
+          </div>
+        </section>
+      ))}
+    </div>
   );
 }
+
+export default Committees;
