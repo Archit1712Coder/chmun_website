@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import { Button } from "../components/ui/button";
 
 function Committees() {
@@ -44,7 +43,6 @@ function Committees() {
 
   return (
     <div className="bg-black text-white pt-20">
-      <Navbar />
       {committees.map((committee, index) => (
         <section
           key={committee.abbr}

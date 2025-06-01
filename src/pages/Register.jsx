@@ -1,0 +1,105 @@
+import { Button } from "../components/ui/button";
+import { ExternalLink } from "lucide-react";
+
+function Register() {
+  return (
+    <div className="min-h-screen bg-black text-white pt-20 flex flex-col items-center">
+      {/* Top Section with Logo Background */}
+      <section
+        className="w-full flex flex-col items-center bg-contain bg-center bg-no-repeat py-32"
+        style={{
+          backgroundImage: `url('/chmunlogo.png')`,
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
+          backgroundBlendMode: "overlay",
+        }}
+      >
+        <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+          <h1 className="text-7xl md:text-9xl font-black tracking-tight text-center mt-12 mb-16">
+            Registration
+          </h1>
+        </div>
+      </section>
+
+      {/* Registration Content */}
+      <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+        {/* Individual Registration */}
+        <section className="w-full mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+            Individual Registration
+          </h2>
+          <p className="text-lg md:text-xl text-gray-300 text-center mb-4">
+            Fee: ₹1000
+          </p>
+          <a
+            href="https://forms.gle/example"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center"
+          >
+            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+              Register Now <ExternalLink className="w-5 h-5 ml-2" />
+            </Button>
+          </a>
+        </section>
+
+        {/* Delegation Registration */}
+        <section className="w-full mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+            Delegation Registration
+          </h2>
+          <p className="text-lg md:text-xl text-gray-300 text-center mb-4">
+            Fee: ₹8000 (up to 10 delegates)
+          </p>
+          <a
+            href="https://forms.gle/example"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center"
+          >
+            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+              Register Now <ExternalLink className="w-5 h-5 ml-2" />
+            </Button>
+          </a>
+        </section>
+
+        {/* Buttons for Resources */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <a
+            href="https://example.com/matrix"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+              Matrix
+            </Button>
+          </a>
+          <a
+            href="https://example.com/delegate-handbook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+              Delegate Handbook
+            </Button>
+          </a>
+          <a
+            href="https://example.com/code-of-conduct"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+              Code of Conduct
+            </Button>
+          </a>
+        </div>
+
+        {/* Last Date of Registration */}
+        <p className="text-lg md:text-xl text-gray-300 mb-12">
+          Last Date of Registration: August 15, 2025
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default Register;

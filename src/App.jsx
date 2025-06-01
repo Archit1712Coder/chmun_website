@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { Button } from "./components/ui/button";
 import { ArrowDown } from "lucide-react";
 import chmunLogo from "/chmunlogo.png";
-import Navbar from "./components/Navbar";
 function App() {
   const aboutRef = useRef(null);
 
@@ -27,7 +26,6 @@ function App() {
   return (
     <div className="min-h-screen bg-black text-white font-sans">
       {/* Navbar */}
-      <Navbar />
 
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center pt-16">
