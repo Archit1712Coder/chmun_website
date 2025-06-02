@@ -1,5 +1,5 @@
 import { Button } from "../components/ui/button";
-
+import { Link } from "react-router-dom";
 function Committees() {
   const committees = [
     {
@@ -8,36 +8,42 @@ function Committees() {
       agenda:
         "Deliberation on UCC with special emphasis on the recent WAQF bill",
       bgImage: "/aippm.avif",
+      path: "/committees/aippm",
     },
     {
       abbr: "UNSC",
       fullForm: "United Nations Security Council",
       agenda: "Addressing Global Security Threats",
       bgImage: "/unsc.avif",
+      path: "/committees/unsc",
     },
     {
       abbr: "DISEC",
       fullForm: "Disarmament and International Security Committee",
       agenda: "Nuclear Disarmament Strategies",
       bgImage: "disec.jpg",
+      path: "/committees/disec",
     },
     {
       abbr: "UNODC",
       fullForm: "United Nations Office on Drugs and Crime",
       agenda: "Combating Transnational Organized Crime",
       bgImage: "unodc.jpeg",
+      path: "/committees/unodc",
     },
     {
       abbr: "CCC",
       fullForm: "Crisis Committee Council",
       agenda: "Managing Global Crises",
       bgImage: "ccc.jpeg",
+      path: "/committees/ccc",
     },
     {
       abbr: "UNHRC",
       fullForm: "United Nations Human Rights Council",
       agenda: "Promoting Global Human Rights",
       bgImage: "unhrc.jpeg",
+      path: "/committees/unhrc",
     },
   ];
 
@@ -65,9 +71,11 @@ function Committees() {
             <p className="text-2xl md:text-2xl text-gray-200 mt-12">
               Agenda: {committee.agenda}
             </p>
-            <Button className="mt-10 bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
-              Learn More
-            </Button>
+            <Link to={committee.path}>
+              <Button className="mt-10 bg-white  cursor-pointer text-black hover:bg-gray-300 text-lg font-semibold px-8 py-3 rounded-lg">
+                Learn More
+              </Button>
+            </Link>
           </div>
         </section>
       ))}

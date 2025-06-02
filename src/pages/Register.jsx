@@ -15,7 +15,7 @@ function Register() {
       >
         <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <h1 className="text-7xl md:text-9xl font-black tracking-tight text-center mt-12 mb-16">
-            Registration
+            Registrations
           </h1>
         </div>
       </section>
@@ -28,10 +28,10 @@ function Register() {
             Individual Registration
           </h2>
           <p className="text-lg md:text-xl text-gray-300 text-center mb-4">
-            Fee: ₹1000
+            Fee: ₹1200
           </p>
           <a
-            href="https://forms.gle/example"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeIcYjMOnZpoPOh6rShryvpPtXJSYAOL9tBaZTL-EIvs3utvw/viewform"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center"
@@ -48,10 +48,10 @@ function Register() {
             Delegation Registration
           </h2>
           <p className="text-lg md:text-xl text-gray-300 text-center mb-4">
-            Fee: ₹8000 (up to 10 delegates)
+            Fee: ₹1200 per Delegate
           </p>
           <a
-            href="https://forms.gle/example"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeIcYjMOnZpoPOh6rShryvpPtXJSYAOL9tBaZTL-EIvs3utvw/viewform"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center"
@@ -95,7 +95,7 @@ function Register() {
 
         {/* Last Date of Registration */}
         <p className="text-lg md:text-xl text-gray-300 mb-12">
-          Last Date of Registration: August 15, 2025
+          Last Date for Registration: August 15, 2025
         </p>
       </div>
     </div>

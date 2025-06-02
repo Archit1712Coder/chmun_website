@@ -9,11 +9,11 @@ function Footer() {
           <div className="flex flex-col space-y-4">
             <div>
               <h3 className="text-lg font-semibold">Secretary General</h3>
-              <p className="text-gray-300">John Doe: +91 98765 43210</p>
+              <p className="text-gray-300">Priyanshu Biswas: +91 93533 00298</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold">Director General</h3>
-              <p className="text-gray-300">Jane Smith: +91 91234 56789</p>
+              <p className="text-gray-300">Srihitha Moole: +91 88845 19519</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold">Email</h3>
@@ -30,7 +30,7 @@ function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <a
-              href="https://www.instagram.com/chmun_official"
+              href="https://www.instagram.com/chmun25/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-gray-300 hover:text-white transition-colors duration-200"
