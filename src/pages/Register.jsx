@@ -15,7 +15,7 @@ function Register() {
       >
         <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <h1 className="text-7xl md:text-9xl font-black tracking-tight text-center mt-12 mb-16">
-            Registrations
+            Registration
           </h1>
         </div>
       </section>
