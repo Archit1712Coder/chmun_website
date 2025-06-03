@@ -36,7 +36,7 @@ function Register() {
             rel="noopener noreferrer"
             className="flex justify-center"
           >
-            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+            <Button className="bg-white text-black hover:cursor-pointer hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
               Register Now <ExternalLink className="w-5 h-5 ml-2" />
             </Button>
           </a>
@@ -56,7 +56,7 @@ function Register() {
             rel="noopener noreferrer"
             className="flex justify-center"
           >
-            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+            <Button className="bg-white text-black hover:cursor-pointer hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
               Register Now <ExternalLink className="w-5 h-5 ml-2" />
             </Button>
           </a>
@@ -69,7 +69,7 @@ function Register() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+            <Button className="bg-white text-black hover:cursor-pointer hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
               Matrix
             </Button>
           </a>
@@ -78,7 +78,7 @@ function Register() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+            <Button className="bg-white text-black hover:cursor-pointer hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
               Delegate Handbook
             </Button>
           </a>
@@ -87,7 +87,7 @@ function Register() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
+            <Button className="bg-white text-black hover:cursor-pointer hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
               Code of Conduct
             </Button>
           </a>
