@@ -20,21 +20,27 @@ function AIPPM() {
         <p className="text-2xl md:text-3xl text-gray-200 text-center mb-12">
           <strong>Agenda:</strong> Discussing National Policy Reforms
         </p>
-        <p className="text-lg md:text-xl text-gray-300 text-center max-w-3xl mb-16">
+        <p className="text-lg md:text-xl text-gray-300 text-center max-w-3xl mb-5">
           The All India Political Parties Meet (AIPPM) brings together
           representatives of Indian political parties to debate and formulate
           national policy reforms. Delegates engage in dynamic discussions,
           representing diverse political ideologies to address critical issues
           facing the nation.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row mb-5 gap-4">
           <a
             href="https://example.com/aippm"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
-              Matrix
+            <Button
+              className="hover:cursor-pointer mt-10 bg-white text-black text-lg font-semibold px-8 py-3 rounded-lg relative overflow-hidden group"
+              style={{ transition: "color 300ms ease-in-out" }}
+            >
+              <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300 ease-in-out">
+                Matrix
+              </span>
             </Button>
           </a>
           <a
@@ -42,8 +48,14 @@ function AIPPM() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="bg-white text-black hover:bg-gray-200 text-lg font-semibold px-8 py-3 rounded-lg">
-              Background Guide
+            <Button
+              className="hover:cursor-pointer mt-10 bg-white text-black text-lg font-semibold px-8 py-3 rounded-lg relative overflow-hidden group"
+              style={{ transition: "color 300ms ease-in-out" }}
+            >
+              <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300 ease-in-out">
+                Background Guide
+              </span>{" "}
             </Button>
           </a>
         </div>
