@@ -48,7 +48,7 @@ function Committees() {
   ];
 
   return (
-    <div className="bg-black text-white pt-20">
+    <div className="mt-[-1.5rem] bg-black text-white pt-20">
       {committees.map((committee, index) => (
         <section
           key={committee.abbr}
@@ -72,8 +72,14 @@ function Committees() {
               Agenda: {committee.agenda}
             </p>
             <Link to={committee.path}>
-              <Button className="mt-10 bg-white  cursor-pointer text-black hover:bg-gray-300 text-lg font-semibold px-8 py-3 rounded-lg">
-                Learn More
+              <Button
+                className="hover:cursor-pointer mt-10 bg-white text-black text-lg font-semibold px-8 py-3 rounded-lg relative overflow-hidden group"
+                style={{ transition: "color 300ms ease-in-out" }}
+              >
+                <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300 ease-in-out">
+                  Learn More
+                </span>
               </Button>
             </Link>
           </div>

@@ -30,10 +30,12 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 border-b border-gray-800">
+    <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 border-b border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="text-2xl font-bold">CHMUN</div>
+        <div className="flex justify-between items-center h-14">
+          <Link to={"/"}>
+            <div className="text-2xl font-bold">CHMUN</div>
+          </Link>
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-8">
             {["Home", "About", "Committees", "Register"].map((item) =>
@@ -41,7 +43,7 @@ function Navbar() {
                 <button
                   key={item}
                   onClick={handleAboutClick}
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  className="text-gray-300 hover:cursor-pointer hover:text-white transition-colors duration-200"
                 >
                   {item}
                 </button>

@@ -55,6 +55,13 @@ function Footer() {
           </div>
         </div>
       </div>
+      {/* Bottom Divider and Copyright */}
+      <div className="mt-4 mb-[-3rem] pt-4 border-t border-gray-800 text-center">
+        <p className="text-sm text-gray-500">
+          &copy; {new Date().getFullYear()} Chrysalis High Model United Nations.
+          All rights reserved.
+        </p>
+      </div>
     </footer>
   );
 }
